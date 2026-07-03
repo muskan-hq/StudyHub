@@ -1,4 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def home(request):
-    return HttpResponse("Welcome to StudyHub!")
+    context = {
+        "name": "Muskan",
+        "project":"StudyHub",
+        "year":"Final year"
+    }
+    return render(request, "home/index.html",context)
