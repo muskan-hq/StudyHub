@@ -7,10 +7,11 @@ def home(request):
         "year":"Final year",
         "placement": False,
         "subjects": [
-            "Python",
+            "HTML",
+            "JavaScript",
             "Django",
-            "Computer Networks",
-            "Machine Learning"
+            "Database",
+            
         ]
     }
     
