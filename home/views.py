@@ -5,6 +5,15 @@ def home(request):
         "name": "Muskan",
         "project":"StudyHub",
         "year":"Final year",
-        "placement": False
+        "placement": False,
+        "subjects": [
+            "Python",
+            "Django",
+            "Computer Networks",
+            "Machine Learning"
+        ]
     }
-    return render(request, "home/index.html",context)
+    
+
+    
+    return render(request, "home/index.html",context,)

@@ -13,6 +13,12 @@
 {% else %}
     <h3>📚 Keep Studying. Placement Starts Next Year.</h3>
 {% endif %}
+    <h4>Subjects</h4>
+    <ul>
+        {%for subject in subjects%}
+        <li>{{subject}}</li>
+        {%endfor%}
+    </ul>
     <p>Learning Together.</p>
 
 </body>
