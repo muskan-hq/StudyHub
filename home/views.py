@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Task
 def home(request):
-    tasks = Task.objects.all() 
+    tasks = Task.objects.filter(task_name="Django")
     context = {
         "name": "Muskan",
         "project":"StudyHub",
