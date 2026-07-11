@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Task
 def home(request):
-    tasks = Task.objects.filter(task_name="Django")
+    tasks = Task.objects.order_by("score")
     context = {
         "name": "Muskan",
         "project":"StudyHub",
