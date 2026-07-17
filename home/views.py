@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from .models import Task
 def home(request):
-    tasks = Task.objects.filter(task_name__icontains="Django")
+    tasks = Task.objects.filter(
+    task_name__icontains="Django",
+    score__gte=80
+    )
     context = {
         "name": "Muskan",
         "project":"StudyHub",
