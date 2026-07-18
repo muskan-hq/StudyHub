@@ -1,19 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
+
 def home(request):
-    tasks = Task.objects.filter(
-    task_name__icontains="Django",
-    score__gte=80
-    )
+    tasks = Task.objects.all()
     context = {
         "name": "Muskan",
-        "project":"StudyHub",
-        "year":"Final year",
+        "project": "StudyHub",
+        "year": "Final year",
         "placement": False,
-        "tasks":tasks,
-    
+        "tasks": tasks,
     }
-   
 
-    
-    return render(request, "home/index.html",context,)
+    return render(request, "home/index.html", context)
+
+def create_task(request):
+
+    task = Task(
+       task_name="Revise DBMS",
+        time="2 Hours",
+        notes="Complete revision before placement preparation",
+        score=88,
+        submission=True
+    )
+
+    task.save()
+
+    return redirect("home")
