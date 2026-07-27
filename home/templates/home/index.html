@@ -13,6 +13,20 @@
 {% else %}
     <h3>📚 Keep Studying. Placement Starts Next Year.</h3>
 {% endif %}
+     <h2>Add New Task</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Task Name:</label><br>
+        <input type="text" name="task_name"><br><br>
+
+        <input type="submit" value="Add Task">
+
+    </form>
+
+    <hr>
     <h4>Filtered Tasks</h4>
     <ul>
     <ul>
